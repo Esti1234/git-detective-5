@@ -1,7 +1,6 @@
 // My Tasks - a very simple task list
 
 // Show the tasks as soon as the script loads
-renderTasks();
 
 // The list of tasks. Each task has a text and a "done" flag.
 const tasks = [
@@ -18,8 +17,10 @@ const taskInput = document.getElementById("task-input");
 const addButton = document.getElementById("add-button");
 
 // Draw all the tasks on the page
-function renderTasks() {
+const renderTasks = () => {
+  // Clear the list first
   taskList.innerHTML = "";
+
 
   if (tasks.length === 0) {
     const message = document.createElement("li");
@@ -65,3 +66,5 @@ function addTask() {
 }
 
 addButton.addEventListener("click", addTask);
+renderTasks();
+
